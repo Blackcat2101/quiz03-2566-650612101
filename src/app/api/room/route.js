@@ -7,23 +7,24 @@ export const GET = async () => {
   readDB();
   return NextResponse.json({
     ok: true,
-    //rooms:
-    //totalRooms:
+    rooms: DB.rooms,
+    totalRooms: DB.roomId + DB.roomId,
   });
 };
 
 export const POST = async (request) => {
   const payload = checkToken();
+  if (role === "ADMIN" || "SUPER_ADMIN")
+    if (token)
+      // return NextResponse.json(
+      //   {
+      //     ok: false,
+      //     message: "Invalid token",
+      //   },
+      //   { status: 401 }
+      // );
 
-  // return NextResponse.json(
-  //   {
-  //     ok: false,
-  //     message: "Invalid token",
-  //   },
-  //   { status: 401 }
-  // );
-
-  readDB();
+      readDB();
 
   // return NextResponse.json(
   //   {
